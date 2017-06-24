@@ -1,4 +1,4 @@
-package ticketingservice;
+package ticketservice;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
