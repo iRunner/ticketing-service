@@ -4,13 +4,14 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+        classpath('se.transmode.gradle:gradle-docker:1.2')
     }
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'docker'
 
 jar {
     baseName = 'ticket-service'
@@ -40,3 +41,16 @@ dependencies {
     testCompile("junit:junit")
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+task buildDocker(type: Docker, dependsOn: build) {
+    push = project.hasProperty('push')
+    applicationName = jar.baseName
+    dockerfile = file('src/main/docker/Dockerfile')
+    doFirst {
+        copy {
+            from jar
+            into stageDir
+        }
+    }
+}
+buildDocker.dependsOn(build)

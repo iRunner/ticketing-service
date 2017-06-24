@@ -39,3 +39,16 @@ A simple ticket service that facilitates the discovery, temporary hold, and fina
 #### After Build Runnable
 
 `java -jar build/libs/ticket-service-*.jar`
+
+
+## Docker
+
+#### Build
+
+`./gradlew buildDocker`
+
+#### Run docker image
+
+`docker run -e "SPRING_PROFILES_ACTIVE=prod" -p 8080:8080 -t ticket-service`
+
+`docker run -e "SPRING_PROFILES_ACTIVE=dev" -p 8080:8080 -t ticket-service`
