@@ -129,7 +129,7 @@ public class Venue implements TicketService {
      */
     public String reserveSeats(int seatHoldId, String customerEmail) {
         SeatHold heldSeats = getPendingReservationById(seatHoldId);
-        if (heldSeats == null || !heldSeats.getSeats().get(0).isAvailable()) {
+        if (heldSeats == null || heldSeats.getSeats().get(0).isAvailable()) {
             return null;
         }
         SeatReserved seats = new SeatReserved(heldSeats);

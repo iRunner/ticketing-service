@@ -48,6 +48,7 @@ public class VenueTest {
         Assert.assertEquals(testVenue.numSeatsAvailable(), 13);
         String testReserve1Id = testVenue.reserveSeats(testHold1.getSeatHoldId(), testHold1.getCustomerEmail());
 
+        Assert.assertNotNull(testReserve1Id);
         Assert.assertEquals(testHold1.getSeats().get(0).getReservationSeatId(), testReserve1Id);
 
     }
