@@ -19,7 +19,6 @@ public class TicketingController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/numberofseats")
     public String seatsAvailable() {
-        System.out.println(venue.numSeatsAvailable());
         return Integer.toString(venue.numSeatsAvailable());
     }
 
