@@ -42,6 +42,16 @@ public class Seat {
         return true;
     }
 
+    @Override
+    public String toString(){
+        return "{ point: ("+this.row+", "+this.col+")" +
+                ", holdSeatId: " + Integer.toString(this.holdSeatId) +
+                ", holdExpiration: " + Long.toString(this.holdExpiration) +
+                ", reservationSeatId: " + this.reservationSeatId +
+                ", customerEmail: " + this.customerEmail + " }";
+
+    }
+
     public int getRow() {
         return row;
     }

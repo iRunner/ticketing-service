@@ -1,9 +1,13 @@
 package ticketservice.seating;
 
+/**
+ * Created by abdullahsahyouni on 6/24/17.
+ */
+
 import java.util.UUID;
 
 /**
- * Created by abdullahsahyouni on 6/24/17.
+ * SeatReserve Class
  */
 public class SeatReserved {
     private SeatHold hold;

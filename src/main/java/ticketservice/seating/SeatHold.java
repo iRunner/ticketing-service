@@ -1,11 +1,13 @@
 package ticketservice.seating;
 
-import java.util.ArrayList;
-
 /**
  * Created by abdullahsahyouni on 6/24/17.
  */
+import java.util.ArrayList;
 
+/**
+ * SeatHold Class
+ */
 public class SeatHold {
 
     private int seatHoldId;
@@ -28,6 +30,19 @@ public class SeatHold {
             seats.get(i).setCustomerEmail(this.customerEmail);
         }
 
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder seatArr = new StringBuilder("[");
+        for (Seat seat : this.seats ) {
+            seatArr.append(seat.toString() + ", ");
+        }
+        seatArr.append("]");
+        return "{ seatHoldId: " + Integer.toString(this.seatHoldId) +
+                ", expiration: " + Long.toString(this.expiration) +
+                ", customerEmail: " + this.customerEmail +
+                ", " + seatArr.toString();
     }
 
     public int getSeatHoldId() {
