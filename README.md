@@ -52,3 +52,12 @@ A simple ticket service that facilitates the discovery, temporary hold, and fina
 `docker run -e "SPRING_PROFILES_ACTIVE=prod" -p 8080:8080 -t ticket-service`
 
 `docker run -e "SPRING_PROFILES_ACTIVE=dev" -p 8080:8080 -t ticket-service`
+
+##### For Javadocs
+
+`./gradlew javadoc`
+`cd build/docs/javadoc/`
+`serve` (from `npm install serve` replace with local server example could best )
+`python -m SimpleHTTPServer 8000`
+
+Or I guess just open the file.. you do you...
