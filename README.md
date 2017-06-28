@@ -61,3 +61,10 @@ A simple ticket service that facilitates the discovery, temporary hold, and fina
 `python -m SimpleHTTPServer 8000`
 
 Or I guess just open the file.. you do you...
+
+
+### PS. Swagger docs 
+
+`localhost:{port}/swagger-ui.html`
+
+(need to turn it off during prod, but eh)
